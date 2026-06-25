@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>조대환 | 올인원 영상 제작 프리랜서</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<script src="./image-slot.js"></script>
+<script src="./yt-slot.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Pretendard Variable", Pretendard, sans-serif; background: #080711; }
+  image-slot { display: block; }
+
+  .glassroot {
+    --accent-a: #7C5CFF;
+    --accent-b: #22D3EE;
+    --grad: linear-gradient(135deg, #7C5CFF, #22D3EE);
+    --bg: #080711;
+    --glass-bg: rgba(255,255,255,0.06);
+    --glass-bd: rgba(255,255,255,0.14);
+    --glass-blur: 18px;
+    --radius: 22px;
+    --btn-r: 14px;
+    --sec: 80px;
+    --blob-op: 0.45;
+    --stagger: 28px;
+    --h1: 78px;
+    --glow: 0 12px 44px rgba(124,92,255,0.4);
+    --hero-align: center;
+    --hero-mx: auto;
+    background: #080711;
+    color: #EDEBFF;
+    min-height: 100vh;
+  }
+
+  .gcard {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-bd);
+    border-radius: var(--radius);
+  }
+
+  .gtext {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 44px;
+  }
+
+  /* Scroll animations */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+<div class="glassroot">
+  <div style="position:relative; overflow:hidden;">
+
+    <!-- Ambient blobs -->
+    <div style="position:absolute; top:-120px; left:-60px; width:560px; height:560px; border-radius:50%; background:radial-gradient(circle, var(--accent-a), transparent 65%); filter:blur(70px); opacity:var(--blob-op); pointer-events:none;"></div>
+    <div style="position:absolute; top:560px; right:-120px; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, var(--accent-b), transparent 65%); filter:blur(80px); opacity:var(--blob-op); pointer-events:none;"></div>
+    <div style="position:absolute; top:1900px; left:25%; width:640px; height:640px; border-radius:50%; background:radial-gradient(circle, var(--accent-a), transparent 65%); filter:blur(90px); opacity:var(--blob-op); pointer-events:none;"></div>
+    <div style="position:absolute; bottom:200px; right:-80px; width:560px; height:560px; border-radius:50%; background:radial-gradient(circle, var(--accent-b), transparent 65%); filter:blur(80px); opacity:var(--blob-op); pointer-events:none;"></div>
+
+    <div style="position:relative;">
+
+      <!-- NAV -->
+      <div style="padding:26px 44px; display:flex; justify-content:center;">
+        <div class="gcard" style="display:flex; align-items:center; gap:30px; border-radius:100px; padding:12px 14px 12px 26px;">
+          <div style="display:flex; align-items:center; gap:9px; font-weight:800; font-size:17px;">
+            <div style="width:10px; height:10px; border-radius:50%; background:var(--grad);"></div>조대환
+          </div>
+          <div style="display:flex; gap:24px; font-size:14px; font-weight:500; color:rgba(237,235,255,0.7);">
+            <a href="#about" style="color:inherit; text-decoration:none;">소개</a>
+            <a href="#stats" style="color:inherit; text-decoration:none;">성과</a>
+            <a href="#expertise" style="color:inherit; text-decoration:none;">전문 분야</a>
+            <a href="#portfolio" style="color:inherit; text-decoration:none;">포트폴리오</a>
+            <a href="#process" style="color:inherit; text-decoration:none;">프로세스</a>
+          </div>
+          <a href="#cta" style="background:var(--grad); color:#08070F; padding:10px 22px; border-radius:100px; font-weight:700; font-size:14px; text-decoration:none;">문의하기</a>
+        </div>
+      </div>
+
+      <!-- HERO -->
+      <div class="wrap" style="padding-top:64px; text-align:var(--hero-align);">
+        <div class="fade-up" style="display:inline-flex; align-items:center; gap:8px; background:var(--glass-bg); backdrop-filter:blur(var(--glass-blur)); -webkit-backdrop-filter:blur(var(--glass-blur)); border:1px solid var(--glass-bd); padding:9px 18px; border-radius:100px; font-size:13px; font-weight:600; color:rgba(237,235,255,0.85); margin-bottom:30px;">
+          <span style="width:7px; height:7px; border-radius:50%; background:var(--grad); display:inline-block;"></span>
+          6년 차 올인원 영상 제작 프리랜서
+        </div>
+        <h1 class="fade-up" style="margin:0; font-size:var(--h1); line-height:1.05; font-weight:800; letter-spacing:-0.035em; transition-delay:0.1s;">
+          영상을 <span class="gtext">성과</span>로<br>완성하는 스튜디오
+        </h1>
+        <p class="fade-up" style="max-width:600px; margin:28px var(--hero-mx) 0; font-size:18px; line-height:1.65; color:rgba(237,235,255,0.65); font-weight:500; transition-delay:0.2s;">
+          촬영 · 편집 · 모션그래픽까지 한 사람이 책임지는 올인원 제작. 숏폼부터 롱폼까지, 목적에 맞는 콘텐츠로 답합니다.
+        </p>
+        <div class="fade-up" style="display:flex; gap:14px; justify-content:var(--hero-align); margin-top:36px; transition-delay:0.3s;">
+          <a href="#cta" style="background:var(--grad); color:#08070F; padding:16px 32px; border-radius:var(--btn-r); font-weight:700; font-size:16px; box-shadow:var(--glow); text-decoration:none; display:inline-block;">견적 요청하기</a>
+          <a href="#portfolio" style="background:var(--glass-bg); backdrop-filter:blur(var(--glass-blur)); -webkit-backdrop-filter:blur(var(--glass-blur)); color:#EDEBFF; padding:16px 32px; border-radius:var(--btn-r); font-weight:600; font-size:16px; border:1px solid var(--glass-bd); text-decoration:none; display:inline-block;">포트폴리오 보기</a>
+        </div>
+      </div>
+
+      <!-- HERO CARDS -->
+      <div class="wrap" style="padding-top:54px;">
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
+          <div class="gcard fade-up" style="padding:10px; transition-delay:0.1s;">
+            <yt-slot id="yt-hero-1" url="https://youtu.be/HvCJ2rGFLZU" radius="14" placeholder="릴스 · 쇼츠" style="height:270px;"></yt-slot>
+          </div>
+          <div class="gcard fade-up" style="padding:10px; margin-top:var(--stagger); transition-delay:0.2s;">
+            <yt-slot id="yt-hero-2" url="https://youtu.be/7aMb6hW4s-o" radius="14" placeholder="롱폼" style="height:270px;"></yt-slot>
+          </div>
+          <div class="gcard fade-up" style="padding:10px; transition-delay:0.3s;">
+            <yt-slot id="yt-hero-3" url="https://youtu.be/ZNlKg6W2Tt0" radius="14" placeholder="강의" style="height:270px;"></yt-slot>
+          </div>
+          <div class="gcard fade-up" style="padding:10px; margin-top:var(--stagger); transition-delay:0.4s;">
+            <yt-slot id="yt-hero-4" url="https://youtu.be/MXX2XER7jZQ" radius="14" placeholder="예능형" style="height:270px;"></yt-slot>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATS -->
+      <div id="stats" class="wrap" style="padding-top:var(--sec);">
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
+          <div class="gcard fade-up" style="padding:32px; transition-delay:0.0s;">
+            <div class="gtext" style="font-size:48px; font-weight:800; letter-spacing:-0.03em;">6<span style="font-size:22px;">년</span></div>
+            <div style="font-size:13px; color:rgba(237,235,255,0.6); margin-top:8px; font-weight:500;">영상 제작 경력</div>
+          </div>
+          <div class="gcard fade-up" style="padding:32px; transition-delay:0.1s;">
+            <div class="gtext" style="font-size:48px; font-weight:800; letter-spacing:-0.03em;">60<span style="font-size:22px;">만+</span></div>
+            <div style="font-size:13px; color:rgba(237,235,255,0.6); margin-top:8px; font-weight:500;">롱폼 단일 최고 조회수</div>
+          </div>
+          <div class="gcard fade-up" style="padding:32px; transition-delay:0.2s;">
+            <div class="gtext" style="font-size:48px; font-weight:800; letter-spacing:-0.03em;">2,000<span style="font-size:22px;">만+</span></div>
+            <div style="font-size:13px; color:rgba(237,235,255,0.6); margin-top:8px; font-weight:500;">누적 조회수</div>
+          </div>
+          <div class="gcard fade-up" style="padding:32px; transition-delay:0.3s;">
+            <div class="gtext" style="font-size:48px; font-weight:800; letter-spacing:-0.03em;">올인원</div>
+            <div style="font-size:13px; color:rgba(237,235,255,0.6); margin-top:8px; font-weight:500;">촬영·편집·모션</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROFILE / ABOUT -->
+      <div id="about" class="wrap" style="padding-top:var(--sec);">
+        <div class="gcard fade-up" style="padding:40px; display:grid; grid-template-columns:280px 1fr; gap:44px; align-items:center;">
+          <image-slot id="gf-profile" src="profile.png" shape="rounded" radius="20" placeholder="프로필 사진" style="width:280px; height:340px;"></image-slot>
+          <div>
+            <div style="font-size:13px; font-weight:700; letter-spacing:0.1em; color:var(--accent-a);">ABOUT</div>
+            <h2 style="margin:14px 0 0; font-size:32px; line-height:1.4; font-weight:700; letter-spacing:-0.01em;">
+              단순히 편집하지 않고, 콘텐츠의 <span class="gtext">목적</span>을 설계합니다
+            </h2>
+            <p style="margin:20px 0 0; font-size:16px; line-height:1.8; color:rgba(237,235,255,0.6); font-weight:500;">
+              6년 동안 다양한 분야의 콘텐츠를 제작하며 촬영부터 편집, 모션그래픽까지 전 과정을 직접 수행해왔습니다. 릴스, 쇼츠, 미드폼, 롱폼, 온라인 강의 등 플랫폼과 형식에 맞는 편집이 가능하며, 콘텐츠의 목적과 타겟 시청자를 고려해 시청 지속률과 전달력을 높이는 방향으로 결과물을 만듭니다.
+            </p>
+            <div style="display:flex; gap:10px; margin-top:24px; flex-wrap:wrap;">
+              <span style="font-size:13px; font-weight:600; padding:8px 14px; border-radius:100px; background:var(--glass-bg); border:1px solid var(--glass-bd);">Premiere Pro</span>
+              <span style="font-size:13px; font-weight:600; padding:8px 14px; border-radius:100px; background:var(--glass-bg); border:1px solid var(--glass-bd);">After Effects</span>
+              <span style="font-size:13px; font-weight:600; padding:8px 14px; border-radius:100px; background:var(--glass-bg); border:1px solid var(--glass-bd);">Photoshop</span>
+              <span style="font-size:13px; font-weight:600; padding:8px 14px; border-radius:100px; background:var(--glass-bg); border:1px solid var(--glass-bd);">Illustrator</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXPERTISE -->
+      <div id="expertise" class="wrap" style="padding-top:var(--sec);">
+        <h2 class="fade-up" style="margin:0 0 30px; font-size:30px; font-weight:800; letter-spacing:-0.02em;">전문 분야</h2>
+        <div class="fade-up" style="display:flex; flex-wrap:wrap; gap:12px; transition-delay:0.1s;">
+          <span style="font-size:16px; font-weight:600; padding:14px 24px; border-radius:100px; background:var(--glass-bg); border:1px solid var(--glass-bd);">유튜브 롱폼</span>
+          <span style="font-size:16px; font-weight:600; padding:14px 24px; border-radius:100px; background:var(--grad); color:#08070F;">유튜브 쇼츠</span>
+          <span style="font-size:16px; font-weight:600; padding:14px 24px; border-radius:100px; background:var(--glass-bg); border:1px solid var(--glass-bd);">인스타그램 릴스</span>
+          <span style="font-size:16px; font-weight:600; padding:14px 24px; border-radius:100px; background:var(--glass-bg); border:1px solid var(--glass-bd);">미드폼</span>
+          <span style="font-size:16px; font-weight:600; padding:14px 24px; border-radius:100px; background:var(--glass-bg); border:1px solid var(--glass-bd);">온라인 강의</span>
+          <span style="font-size:16px; font-weight:600; padding:14px 24px; border-radius:100px; background:var(--grad); color:#08070F;">정보성 콘텐츠</span>
+          <span style="font-size:16px; font-weight:600; padding:14px 24px; border-radius:100px; background:var(--glass-bg); border:1px solid var(--glass-bd);">예능형 콘텐츠</span>
+          <span style="font-size:16px; font-weight:600; padding:14px 24px; border-radius:100px; background:var(--glass-bg); border:1px solid var(--glass-bd);">전문직 분야</span>
+          <span style="font-size:16px; font-weight:600; padding:14px 24px; border-radius:100px; background:var(--glass-bg); border:1px solid var(--glass-bd);">모션그래픽</span>
+          <span style="font-size:16px; font-weight:600; padding:14px 24px; border-radius:100px; background:var(--glass-bg); border:1px solid var(--glass-bd);">자막 디자인</span>
+          <span style="font-size:16px; font-weight:600; padding:14px 24px; border-radius:100px; background:var(--glass-bg); border:1px solid var(--glass-bd);">썸네일 제작</span>
+        </div>
+      </div>
+
+      <!-- PORTFOLIO -->
+      <div id="portfolio" class="wrap" style="padding-top:var(--sec);">
+        <div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:28px;">
+          <h2 class="fade-up" style="margin:0; font-size:30px; font-weight:800; letter-spacing:-0.02em;">포트폴리오</h2>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:200px; gap:16px;">
+          <div class="gcard fade-up" style="grid-column:span 2; grid-row:span 2; padding:8px; transition-delay:0.0s; overflow:hidden;">
+            <yt-slot id="yt-pf-1" url="https://youtube.com/shorts/xDvUqcgcWOk" radius="14" placeholder="작업물" style="height:100%;"></yt-slot>
+          </div>
+          <div class="gcard fade-up" style="padding:8px; transition-delay:0.15s; overflow:hidden;">
+            <yt-slot id="yt-pf-2" url="https://youtu.be/NOtWBs0Mg_E" radius="10" placeholder="작업물" style="height:100%;"></yt-slot>
+          </div>
+          <div class="gcard fade-up" style="padding:8px; transition-delay:0.2s; overflow:hidden;">
+            <yt-slot id="yt-pf-3" url="https://youtu.be/-ovfmpsNcek" radius="10" placeholder="작업물" style="height:100%;"></yt-slot>
+          </div>
+          <div class="gcard fade-up" style="grid-column:span 2; padding:8px; transition-delay:0.3s; overflow:hidden;">
+            <yt-slot id="yt-pf-4" url="https://youtu.be/VzKY02KD-tI" radius="10" placeholder="작업물" style="height:100%;"></yt-slot>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROCESS -->
+      <div id="process" class="wrap" style="padding-top:var(--sec);">
+        <h2 class="fade-up" style="margin:0 0 30px; font-size:30px; font-weight:800; letter-spacing:-0.02em;">작업 프로세스</h2>
+        <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:14px;">
+          <div class="gcard fade-up" style="padding:24px; transition-delay:0.0s;">
+            <div class="gtext" style="font-size:30px; font-weight:800;">01</div>
+            <div style="font-size:15px; font-weight:700; margin-top:14px;">기획 의도 파악</div>
+          </div>
+          <div class="gcard fade-up" style="padding:24px; transition-delay:0.1s;">
+            <div class="gtext" style="font-size:30px; font-weight:800;">02</div>
+            <div style="font-size:15px; font-weight:700; margin-top:14px;">촬영</div>
+          </div>
+          <div class="gcard fade-up" style="padding:24px; transition-delay:0.2s;">
+            <div class="gtext" style="font-size:30px; font-weight:800;">03</div>
+            <div style="font-size:15px; font-weight:700; margin-top:14px;">편집</div>
+          </div>
+          <div class="gcard fade-up" style="padding:24px; transition-delay:0.3s;">
+            <div class="gtext" style="font-size:30px; font-weight:800;">04</div>
+            <div style="font-size:15px; font-weight:700; margin-top:14px;">피드백 · 수정</div>
+          </div>
+          <div class="fade-up" style="background:var(--grad); border-radius:var(--radius); padding:24px; transition-delay:0.4s;">
+            <div style="font-size:30px; font-weight:800; color:#fff;">05</div>
+            <div style="font-size:15px; font-weight:700; margin-top:14px; color:#fff;">최종 납품</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div id="cta" class="wrap" style="padding-top:var(--sec); padding-bottom:var(--sec);">
+        <div class="gcard fade-up" style="position:relative; padding:80px 56px; text-align:center; overflow:hidden;">
+          <div style="position:absolute; top:-80px; left:50%; transform:translateX(-50%); width:420px; height:300px; background:radial-gradient(circle,var(--accent-a),transparent 65%); filter:blur(50px); opacity:0.5; pointer-events:none;"></div>
+          <div style="position:relative;">
+            <h2 style="margin:0; font-size:46px; font-weight:800; letter-spacing:-0.025em; line-height:1.15;">
+              지금, <span class="gtext">견적</span>부터 받아보세요
+            </h2>
+            <p style="margin:18px auto 0; max-width:440px; font-size:16px; line-height:1.6; color:rgba(237,235,255,0.6); font-weight:500;">
+              콘텐츠의 목적에 맞는 제작 방향을 제안드립니다. 편하게 문의 주세요.
+            </p>
+            <div style="display:flex; gap:14px; justify-content:center; margin-top:32px;">
+              <a href="mailto:jodaeng95@gmail.com" style="background:var(--grad); color:#08070F; padding:16px 34px; border-radius:var(--btn-r); font-weight:700; font-size:16px; box-shadow:var(--glow); text-decoration:none; display:inline-block;">문의하기</a>
+              <a href="mailto:jodaeng95@gmail.com" style="background:var(--glass-bg); color:#EDEBFF; padding:16px 34px; border-radius:var(--btn-r); font-weight:600; font-size:16px; border:1px solid var(--glass-bd); text-decoration:none; display:inline-block;">견적 요청</a>
+            </div>
+            <div style="margin-top:30px; font-size:13px; color:rgba(237,235,255,0.4); font-weight:500;">© 2026 조대환 · All-in-One Content Creator</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // Scroll-triggered fade-in animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
