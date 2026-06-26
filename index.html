@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>조대환 | Content Creator Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<style>
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background: #08080a; }
+body { background: #08080a; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+@keyframes heroSpin  { from { transform: translate(-50%,-50%) rotate(0deg);   } to { transform: translate(-50%,-50%) rotate(360deg);  } }
+@keyframes heroSpinR { from { transform: rotate(0deg);   } to { transform: rotate(-360deg);  } }
+@keyframes shimmer   { to   { background-position: 200% center; } }
+@keyframes float1    { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-11px); } }
+@keyframes float2    { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+@keyframes float3    { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px);  } }
+@keyframes cueBob    { 0%,100% { transform: translateY(0); opacity:.5; } 50% { transform: translateY(6px); opacity:1; } }
+@keyframes aurora1   { 0%,100% { transform: translate(-8%,-6%) scale(1);    } 50% { transform: translate(10%,8%)   scale(1.22); } }
+@keyframes aurora2   { 0%,100% { transform: translate(8%,6%)  scale(1.12);  } 50% { transform: translate(-10%,-6%) scale(1.28); } }
+@keyframes aurora3   { 0%,100% { transform: translate(2%,6%)  scale(1.05);  } 50% { transform: translate(-6%,-10%) scale(1.24); } }
+@keyframes hueShift  { to { filter: hue-rotate(360deg); } }
+
+/* nav links */
+.nav-link { transition: color .25s ease; }
+.nav-link:hover { color: #fff !important; }
+
+/* hero tiles */
+.tile-card { transition: filter .4s ease, transform .4s ease; }
+.tile-card:hover { filter: none !important; transform: scale(1.05); }
+.tile-card-circle:hover { filter: none !important; transform: scale(1.07); }
+
+/* CTA buttons */
+.btn-primary { transition: transform .25s ease; }
+.btn-primary:hover { transform: translateY(-2px); }
+.btn-outline { transition: border-color .25s ease, background .25s ease; }
+.btn-outline:hover { border-color: rgba(255,255,255,.6) !important; background: rgba(255,255,255,.06) !important; }
+
+/* work cards */
+.work-thumb { transition: filter .45s ease, transform .5s ease, box-shadow .45s ease; }
+.work-card:hover .work-thumb { filter: none !important; transform: translateY(-4px); box-shadow: 0 26px 44px -22px rgba(0,0,0,.9); }
+
+/* contact email */
+.contact-email { transition: transform .25s ease, box-shadow .25s ease; }
+.contact-email:hover { transform: translateY(-3px); box-shadow: 0 24px 50px -18px rgba(255,255,255,.3); }
+
+/* filter chips */
+.filter-chip { cursor: pointer; font: 600 13px/1 'Pretendard Variable',sans-serif; padding: 10px 18px; border-radius: 999px; transition: all .25s ease; }
+.filter-chip.active { border: 1px solid #fff; background: #fff; color: #0a0a0a; }
+.filter-chip.inactive { border: 1px solid rgba(255,255,255,.16); background: transparent; color: rgba(255,255,255,.66); }
+
+/* reveal */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+<div style="background:#08080a; color:#fff; font-family:'Pretendard Variable',Pretendard,-apple-system,system-ui,sans-serif; min-height:100vh; overflow-x:hidden;">
+
+  <!-- ===== HEADER ===== -->
+  <header style="position:fixed; top:0; left:0; right:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:18px clamp(20px,4vw,48px); backdrop-filter:blur(14px); background:rgba(8,8,10,.55); border-bottom:1px solid rgba(255,255,255,.06);">
+    <a href="#top" style="display:flex; align-items:baseline; gap:10px; text-decoration:none; color:#fff;">
+      <span style="font:700 19px/1 'Pretendard Variable',sans-serif; letter-spacing:-.01em;">조대환</span>
+      <span style="font:500 10px/1 'Space Grotesk',sans-serif; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.45);">Content&nbsp;Creator</span>
+    </a>
+    <nav style="display:flex; align-items:center; gap:clamp(18px,2.4vw,34px); flex-wrap:wrap;">
+      <a href="#top"     class="nav-link" style="font:600 12px/1 'Space Grotesk',sans-serif; letter-spacing:.14em; color:rgba(255,255,255,.66); text-decoration:none;">HOME</a>
+      <a href="#work"    class="nav-link" style="font:600 12px/1 'Space Grotesk',sans-serif; letter-spacing:.14em; color:rgba(255,255,255,.66); text-decoration:none;">WORK</a>
+      <a href="#contact" class="nav-link" style="font:600 12px/1 'Space Grotesk',sans-serif; letter-spacing:.14em; color:rgba(255,255,255,.66); text-decoration:none;">CONTACT</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="top" style="position:relative; height:100vh; min-height:680px; overflow:hidden; display:flex; align-items:center; justify-content:center; background:radial-gradient(circle at 50% 42%, #0d0c18 0%, #08070f 48%, #060509 75%);">
+
+    <!-- aurora / iridescent field -->
+    <div style="position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none;">
+      <div style="position:absolute; inset:-25%; filter:blur(72px); opacity:.62; animation:hueShift 26s linear infinite;">
+        <div style="position:absolute; left:-5%; top:-8%; width:62%; height:62%; border-radius:50%; background:radial-gradient(circle at 50% 50%, rgba(108,227,209,.9), rgba(108,227,209,0) 65%); animation:aurora1 18s ease-in-out infinite;"></div>
+        <div style="position:absolute; right:-8%; top:0%; width:66%; height:66%; border-radius:50%; background:radial-gradient(circle at 50% 50%, rgba(139,108,240,.85), rgba(139,108,240,0) 65%); animation:aurora2 22s ease-in-out infinite;"></div>
+        <div style="position:absolute; left:14%; bottom:-14%; width:64%; height:64%; border-radius:50%; background:radial-gradient(circle at 50% 50%, rgba(227,108,199,.8), rgba(227,108,199,0) 65%); animation:aurora3 20s ease-in-out infinite;"></div>
+        <div style="position:absolute; right:6%; bottom:-10%; width:58%; height:58%; border-radius:50%; background:radial-gradient(circle at 50% 50%, rgba(108,177,227,.78), rgba(108,177,227,0) 65%); animation:aurora1 24s ease-in-out infinite;"></div>
+        <div style="position:absolute; left:30%; top:18%; width:50%; height:50%; border-radius:50%; background:radial-gradient(circle at 50% 50%, rgba(124,227,154,.66), rgba(124,227,154,0) 65%); animation:aurora2 26s ease-in-out infinite;"></div>
+      </div>
+      <div style="position:absolute; inset:0; background:radial-gradient(circle at 50% 44%, rgba(6,5,9,0) 30%, rgba(6,5,9,.55) 72%, rgba(6,5,9,.85) 100%);"></div>
+    </div>
+
+    <!-- rotating ring (80s duration, monochrome default) -->
+    <div style="position:absolute; top:50%; left:50%; width:min(1080px,98vmin); height:min(1080px,98vmin); transform:translate(-50%,-50%); animation:heroSpin 80s linear infinite; pointer-events:none; z-index:1;">
+
+      <!-- tile 1: top-left large -->
+      <div onclick="window.open('https://youtu.be/7aMb6hW4s-o','_blank','noopener')" style="position:absolute; left:21%; top:17%; width:clamp(170px,17vmin,262px); aspect-ratio:16/9; transform:translate(-50%,-50%) rotate(-6deg); pointer-events:auto;">
+        <div style="width:100%; height:100%; animation:heroSpinR 80s linear infinite;">
+          <div style="width:100%; height:100%; animation:float1 7s ease-in-out infinite;">
+            <div class="tile-card" style="position:relative; width:100%; height:100%; border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.10); background:#171719; background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 10px, transparent 10px 22px); box-shadow:0 34px 60px -22px rgba(0,0,0,.85); filter:grayscale(1); cursor:pointer;">
+              <img src="https://img.youtube.com/vi/7aMb6hW4s-o/hqdefault.jpg" alt="롱폼" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+              <div style="position:absolute; inset:0; background:radial-gradient(120% 120% at 28% 18%, rgba(255,255,255,.09), transparent 55%);"></div>
+              <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center;"><div style="width:42px; height:42px; border-radius:50%; background:rgba(0,0,0,.4); backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,.32); display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-style:solid; border-width:6px 0 6px 10px; border-color:transparent transparent transparent rgba(255,255,255,.95); margin-left:2px;"></div></div></div>
+              <div style="position:absolute; left:11px; bottom:9px; font:600 10px/1 'Space Grotesk',sans-serif; letter-spacing:.13em; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.7);">LONGFORM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- tile 2: top-right large -->
+      <div onclick="window.open('https://youtu.be/MXX2XER7jZQ','_blank','noopener')" style="position:absolute; left:73%; top:13%; width:clamp(160px,16vmin,244px); aspect-ratio:16/9; transform:translate(-50%,-50%) rotate(5deg); pointer-events:auto;">
+        <div style="width:100%; height:100%; animation:heroSpinR 80s linear infinite;">
+          <div style="width:100%; height:100%; animation:float2 8.4s ease-in-out infinite;">
+            <div class="tile-card" style="position:relative; width:100%; height:100%; border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.10); background:#1b1b1e; background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 10px, transparent 10px 22px); box-shadow:0 34px 60px -22px rgba(0,0,0,.85); filter:grayscale(1); cursor:pointer;">
+              <img src="https://img.youtube.com/vi/MXX2XER7jZQ/hqdefault.jpg" alt="예능" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+              <div style="position:absolute; inset:0; background:radial-gradient(120% 120% at 70% 20%, rgba(255,255,255,.09), transparent 55%);"></div>
+              <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center;"><div style="width:42px; height:42px; border-radius:50%; background:rgba(0,0,0,.4); backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,.32); display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-style:solid; border-width:6px 0 6px 10px; border-color:transparent transparent transparent rgba(255,255,255,.95); margin-left:2px;"></div></div></div>
+              <div style="position:absolute; left:11px; bottom:9px; font:600 10px/1 'Space Grotesk',sans-serif; letter-spacing:.06em; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.7);">예능 · ENTERTAINMENT</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- tile 3: right small circle -->
+      <div onclick="window.open('https://youtube.com/shorts/xDvUqcgcWOk','_blank','noopener')" style="position:absolute; left:91%; top:33%; width:clamp(72px,8vmin,104px); aspect-ratio:1; transform:translate(-50%,-50%); pointer-events:auto;">
+        <div style="width:100%; height:100%; animation:heroSpinR 80s linear infinite;">
+          <div style="width:100%; height:100%; animation:float3 6.6s ease-in-out infinite;">
+            <div class="tile-card tile-card-circle" style="position:relative; width:100%; height:100%; border-radius:50%; overflow:hidden; border:1px solid rgba(255,255,255,.12); background:#202023; box-shadow:0 22px 40px -18px rgba(0,0,0,.8); filter:grayscale(1); cursor:pointer; display:flex; align-items:center; justify-content:center;">
+              <img src="https://img.youtube.com/vi/xDvUqcgcWOk/hqdefault.jpg" alt="쇼츠" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+              <span style="position:relative; font:600 10px/1 'Space Grotesk',sans-serif; letter-spacing:.1em; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.8);">SHORTS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- tile 4: right large -->
+      <div onclick="window.open('https://youtu.be/WUuahlMKY3k','_blank','noopener')" style="position:absolute; left:94%; top:58%; width:clamp(165px,16.5vmin,250px); aspect-ratio:16/9; transform:translate(-50%,-50%) rotate(-4deg); pointer-events:auto;">
+        <div style="width:100%; height:100%; animation:heroSpinR 80s linear infinite;">
+          <div style="width:100%; height:100%; animation:float1 7.8s ease-in-out infinite;">
+            <div class="tile-card" style="position:relative; width:100%; height:100%; border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.10); background:#161618; background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 10px, transparent 10px 22px); box-shadow:0 34px 60px -22px rgba(0,0,0,.85); filter:grayscale(1); cursor:pointer;">
+              <img src="https://img.youtube.com/vi/WUuahlMKY3k/hqdefault.jpg" alt="인터뷰" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+              <div style="position:absolute; inset:0; background:radial-gradient(120% 120% at 60% 30%, rgba(255,255,255,.08), transparent 55%);"></div>
+              <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center;"><div style="width:42px; height:42px; border-radius:50%; background:rgba(0,0,0,.4); backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,.32); display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-style:solid; border-width:6px 0 6px 10px; border-color:transparent transparent transparent rgba(255,255,255,.95); margin-left:2px;"></div></div></div>
+              <div style="position:absolute; left:11px; bottom:9px; font:600 10px/1 'Space Grotesk',sans-serif; letter-spacing:.06em; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.7);">인터뷰 · INTERVIEW</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- tile 5: bottom-right circle -->
+      <div onclick="window.open('https://youtu.be/tdvthOQIB8g','_blank','noopener')" style="position:absolute; left:79%; top:85%; width:clamp(96px,11vmin,150px); aspect-ratio:1; transform:translate(-50%,-50%); pointer-events:auto;">
+        <div style="width:100%; height:100%; animation:heroSpinR 80s linear infinite;">
+          <div style="width:100%; height:100%; animation:float2 7.2s ease-in-out infinite;">
+            <div class="tile-card tile-card-circle" style="position:relative; width:100%; height:100%; border-radius:50%; overflow:hidden; border:1px solid rgba(255,255,255,.10); background:#1a1a1d; background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 9px, transparent 9px 20px); box-shadow:0 26px 46px -18px rgba(0,0,0,.82); filter:grayscale(1); cursor:pointer; display:flex; align-items:center; justify-content:center;">
+              <img src="https://img.youtube.com/vi/tdvthOQIB8g/hqdefault.jpg" alt="작업물" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+              <div style="position:relative; width:38px; height:38px; border-radius:50%; background:rgba(0,0,0,.4); backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,.32); display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-style:solid; border-width:5px 0 5px 9px; border-color:transparent transparent transparent rgba(255,255,255,.95); margin-left:2px;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- tile 6: bottom-center -->
+      <div onclick="window.open('https://youtu.be/iMMvwDgiw8k','_blank','noopener')" style="position:absolute; left:50%; top:93%; width:clamp(120px,13vmin,178px); aspect-ratio:16/9; transform:translate(-50%,-50%) rotate(4deg); pointer-events:auto;">
+        <div style="width:100%; height:100%; animation:heroSpinR 80s linear infinite;">
+          <div style="width:100%; height:100%; animation:float3 6.9s ease-in-out infinite;">
+            <div class="tile-card" style="position:relative; width:100%; height:100%; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.10); background:#1d1d20; background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.045) 0 8px, transparent 8px 18px); box-shadow:0 28px 50px -20px rgba(0,0,0,.82); filter:grayscale(1); cursor:pointer; display:flex; align-items:center; justify-content:center;">
+              <img src="https://img.youtube.com/vi/iMMvwDgiw8k/hqdefault.jpg" alt="모션" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+              <span style="position:relative; font:600 11px/1 'Space Grotesk',sans-serif; letter-spacing:.16em; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.7);">MOTION</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- tile 7: bottom-left large -->
+      <div onclick="window.open('https://youtu.be/nJzdwsn5USs','_blank','noopener')" style="position:absolute; left:18%; top:84%; width:clamp(165px,16.5vmin,250px); aspect-ratio:16/9; transform:translate(-50%,-50%) rotate(6deg); pointer-events:auto;">
+        <div style="width:100%; height:100%; animation:heroSpinR 80s linear infinite;">
+          <div style="width:100%; height:100%; animation:float1 8.1s ease-in-out infinite;">
+            <div class="tile-card" style="position:relative; width:100%; height:100%; border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.10); background:#161618; background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 10px, transparent 10px 22px); box-shadow:0 34px 60px -22px rgba(0,0,0,.85); filter:grayscale(1); cursor:pointer;">
+              <img src="https://img.youtube.com/vi/nJzdwsn5USs/hqdefault.jpg" alt="정보성" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+              <div style="position:absolute; inset:0; background:radial-gradient(120% 120% at 40% 28%, rgba(255,255,255,.08), transparent 55%);"></div>
+              <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center;"><div style="width:42px; height:42px; border-radius:50%; background:rgba(0,0,0,.4); backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,.32); display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-style:solid; border-width:6px 0 6px 10px; border-color:transparent transparent transparent rgba(255,255,255,.95); margin-left:2px;"></div></div></div>
+              <div style="position:absolute; left:11px; bottom:9px; font:600 10px/1 'Space Grotesk',sans-serif; letter-spacing:.06em; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.7);">정보성 · DOCUMENTARY</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- tile 8: left large -->
+      <div onclick="window.open('https://youtu.be/ZNlKg6W2Tt0','_blank','noopener')" style="position:absolute; left:6%; top:55%; width:clamp(160px,16vmin,244px); aspect-ratio:16/9; transform:translate(-50%,-50%) rotate(4deg); pointer-events:auto;">
+        <div style="width:100%; height:100%; animation:heroSpinR 80s linear infinite;">
+          <div style="width:100%; height:100%; animation:float2 7.6s ease-in-out infinite;">
+            <div class="tile-card" style="position:relative; width:100%; height:100%; border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.10); background:#1a1a1d; background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 10px, transparent 10px 22px); box-shadow:0 34px 60px -22px rgba(0,0,0,.85); filter:grayscale(1); cursor:pointer;">
+              <img src="https://img.youtube.com/vi/ZNlKg6W2Tt0/hqdefault.jpg" alt="강의" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+              <div style="position:absolute; inset:0; background:radial-gradient(120% 120% at 32% 22%, rgba(255,255,255,.08), transparent 55%);"></div>
+              <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center;"><div style="width:42px; height:42px; border-radius:50%; background:rgba(0,0,0,.4); backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,.32); display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-style:solid; border-width:6px 0 6px 10px; border-color:transparent transparent transparent rgba(255,255,255,.95); margin-left:2px;"></div></div></div>
+              <div style="position:absolute; left:11px; bottom:9px; font:600 10px/1 'Space Grotesk',sans-serif; letter-spacing:.06em; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.7);">강의 · ONLINE CLASS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- tile 9: left-upper small circle -->
+      <div onclick="window.open('https://youtu.be/HvCJ2rGFLZU','_blank','noopener')" style="position:absolute; left:11%; top:37%; width:clamp(70px,7.6vmin,98px); aspect-ratio:1; transform:translate(-50%,-50%); pointer-events:auto;">
+        <div style="width:100%; height:100%; animation:heroSpinR 80s linear infinite;">
+          <div style="width:100%; height:100%; animation:float3 6.3s ease-in-out infinite;">
+            <div class="tile-card tile-card-circle" style="position:relative; width:100%; height:100%; border-radius:50%; overflow:hidden; border:1px solid rgba(255,255,255,.12); background:#202023; box-shadow:0 22px 40px -18px rgba(0,0,0,.8); filter:grayscale(1); cursor:pointer; display:flex; align-items:center; justify-content:center;">
+              <img src="https://img.youtube.com/vi/HvCJ2rGFLZU/hqdefault.jpg" alt="릴스" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+              <span style="position:relative; font:600 10px/1 'Space Grotesk',sans-serif; letter-spacing:.1em; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,.8);">REELS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- center scrim -->
+    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:min(760px,86vw); height:min(560px,70vh); z-index:2; background:radial-gradient(closest-side, rgba(8,8,10,.92) 0%, rgba(8,8,10,.7) 42%, rgba(8,8,10,0) 76%); pointer-events:none;"></div>
+
+    <!-- center copy -->
+    <div style="position:relative; z-index:3; text-align:center; padding:0 20px; pointer-events:none;">
+      <div style="font:500 11px/1 'Space Grotesk',sans-serif; letter-spacing:.34em; text-transform:uppercase; color:rgba(255,255,255,.5); margin-bottom:26px;">All-in-One Content Creator</div>
+      <h1 style="margin:0; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(38px,7vw,94px); line-height:1.0; letter-spacing:-.025em; color:#fff;">
+        We create<br>
+        <span style="background:linear-gradient(110deg,#6ce3d1 0%,#8b9cf5 26%,#d98bf0 50%,#f0b88b 72%,#6ce3d1 100%); background-size:200% auto; -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; animation:shimmer 6.5s linear infinite;">original</span> content
+      </h1>
+      <p style="margin:26px auto 0; max-width:560px; font:400 clamp(14px,1.5vw,18px)/1.7 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.6);">기획부터 촬영 · 편집 · 모션그래픽까지,<br>한 창구에서 완성하는 6년 차 올인원 영상 제작자 <span style="color:rgba(255,255,255,.92); font-weight:600;">조대환</span>입니다.</p>
+      <div style="margin-top:34px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; pointer-events:auto;">
+        <a href="#work"    class="btn-primary" style="font:600 13px/1 'Pretendard Variable',sans-serif; color:#0a0a0a; background:#fff; padding:14px 24px; border-radius:999px; text-decoration:none;">작업물 보기</a>
+        <a href="#contact" class="btn-outline"  style="font:600 13px/1 'Pretendard Variable',sans-serif; color:#fff; background:transparent; padding:14px 24px; border-radius:999px; text-decoration:none; border:1px solid rgba(255,255,255,.25);">제작 문의</a>
+      </div>
+    </div>
+
+    <div style="position:absolute; bottom:26px; left:50%; transform:translateX(-50%); z-index:3; font:500 10px/1.6 'Space Grotesk',sans-serif; letter-spacing:.2em; color:rgba(255,255,255,.4); text-align:center; animation:cueBob 2.4s ease-in-out infinite;">SCROLL<br>↓</div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section id="stats" style="position:relative; padding:clamp(72px,11vw,140px) clamp(20px,5vw,80px); border-top:1px solid rgba(255,255,255,.06); background:#0a0a0c;">
+    <div class="reveal" style="max-width:1240px; margin:0 auto;">
+      <div style="font:500 11px/1 'Space Grotesk',sans-serif; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:18px;">By the numbers · 숫자로 보는 성과</div>
+      <p style="margin:0 0 56px; max-width:680px; font:400 clamp(18px,2.2vw,28px)/1.55 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.85); letter-spacing:-.01em;">단순히 편집만 하지 않습니다. 콘텐츠의 <span style="color:#fff; font-weight:600;">목적과 타겟 시청자</span>를 기준으로 시청 지속률과 전달력을 끌어올립니다.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:1px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.07); border-radius:18px; overflow:hidden;">
+        <div style="background:#0a0a0c; padding:34px 26px;">
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(34px,4.4vw,56px); line-height:1; letter-spacing:-.03em; color:#fff;">6년</div>
+          <div style="margin-top:14px; font:600 14px/1.4 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.82);">영상 제작 경력</div>
+          <div style="margin-top:5px; font:400 12px/1.4 'Space Grotesk',sans-serif; letter-spacing:.04em; color:rgba(255,255,255,.4);">Since 2020</div>
+        </div>
+        <div style="background:#0a0a0c; padding:34px 26px;">
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(34px,4.4vw,56px); line-height:1; letter-spacing:-.03em; color:#fff;">60만+</div>
+          <div style="margin-top:14px; font:600 14px/1.4 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.82);">롱폼 단일 최고 조회수</div>
+          <div style="margin-top:5px; font:400 12px/1.4 'Space Grotesk',sans-serif; letter-spacing:.04em; color:rgba(255,255,255,.4);">Single video</div>
+        </div>
+        <div style="background:#0a0a0c; padding:34px 26px;">
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(34px,4.4vw,56px); line-height:1; letter-spacing:-.03em; color:#fff;">2,000만+</div>
+          <div style="margin-top:14px; font:600 14px/1.4 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.82);">숏폼 포함 누적 조회수</div>
+          <div style="margin-top:5px; font:400 12px/1.4 'Space Grotesk',sans-serif; letter-spacing:.04em; color:rgba(255,255,255,.4);">Total views</div>
+        </div>
+        <div style="background:#0a0a0c; padding:34px 26px;">
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(34px,4.4vw,56px); line-height:1; letter-spacing:-.03em; color:#fff;">All-in-One</div>
+          <div style="margin-top:14px; font:600 14px/1.4 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.82);">촬영 · 편집 · 모션그래픽</div>
+          <div style="margin-top:5px; font:400 12px/1.4 'Space Grotesk',sans-serif; letter-spacing:.04em; color:rgba(255,255,255,.4);">One window</div>
+        </div>
+      </div>
+      <div style="margin-top:36px; display:flex; flex-wrap:wrap; gap:9px;">
+        <span style="font:500 12px/1 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.6); border:1px solid rgba(255,255,255,.13); padding:8px 14px; border-radius:999px;">유튜브 롱폼</span>
+        <span style="font:500 12px/1 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.6); border:1px solid rgba(255,255,255,.13); padding:8px 14px; border-radius:999px;">쇼츠 · 릴스</span>
+        <span style="font:500 12px/1 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.6); border:1px solid rgba(255,255,255,.13); padding:8px 14px; border-radius:999px;">예능형 콘텐츠</span>
+        <span style="font:500 12px/1 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.6); border:1px solid rgba(255,255,255,.13); padding:8px 14px; border-radius:999px;">정보성 콘텐츠</span>
+        <span style="font:500 12px/1 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.6); border:1px solid rgba(255,255,255,.13); padding:8px 14px; border-radius:999px;">온라인 강의</span>
+        <span style="font:500 12px/1 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.6); border:1px solid rgba(255,255,255,.13); padding:8px 14px; border-radius:999px;">모션그래픽</span>
+        <span style="font:500 12px/1 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.6); border:1px solid rgba(255,255,255,.13); padding:8px 14px; border-radius:999px;">자막 디자인</span>
+        <span style="font:500 12px/1 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.6); border:1px solid rgba(255,255,255,.13); padding:8px 14px; border-radius:999px;">썸네일 제작</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WORK ===== -->
+  <section id="work" style="position:relative; padding:clamp(72px,11vw,140px) clamp(20px,5vw,80px); border-top:1px solid rgba(255,255,255,.06);">
+    <div style="max-width:1240px; margin:0 auto;">
+      <div class="reveal" style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:34px;">
+        <div>
+          <div style="font:500 11px/1 'Space Grotesk',sans-serif; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:14px;">Work</div>
+          <h2 style="margin:0; display:flex; align-items:center; gap:14px; font:700 clamp(28px,4vw,46px)/1 'Pretendard Variable',sans-serif; letter-spacing:-.02em; color:#fff;">오리지널 작업물 <span style="font:600 14px/1 'Space Grotesk',sans-serif; color:rgba(255,255,255,.55); border:1px solid rgba(255,255,255,.18); border-radius:999px; padding:6px 11px;">08</span></h2>
+        </div>
+        <p style="margin:0; max-width:360px; font:400 13px/1.6 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.46);">롱폼 · 쇼츠 · 릴스 · 예능 · 정보성까지, 플랫폼과 형식에 맞춰 제작합니다.</p>
+      </div>
+
+      <!-- filter chips -->
+      <div style="display:flex; flex-wrap:wrap; gap:9px; margin-bottom:32px;" id="filter-row">
+        <button class="filter-chip active"   data-cat="all"    onclick="setFilter(this,'all')">전체</button>
+        <button class="filter-chip inactive" data-cat="long"   onclick="setFilter(this,'long')">롱폼</button>
+        <button class="filter-chip inactive" data-cat="short"  onclick="setFilter(this,'short')">쇼츠·릴스</button>
+        <button class="filter-chip inactive" data-cat="ent"    onclick="setFilter(this,'ent')">예능</button>
+        <button class="filter-chip inactive" data-cat="info"   onclick="setFilter(this,'info')">정보성</button>
+        <button class="filter-chip inactive" data-cat="class"  onclick="setFilter(this,'class')">강의</button>
+        <button class="filter-chip inactive" data-cat="motion" onclick="setFilter(this,'motion')">모션그래픽</button>
+      </div>
+
+      <!-- work grid -->
+      <div id="work-grid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(258px,1fr)); gap:22px;"></div>
+      <p style="margin:30px 0 0; font:400 12px/1.6 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.32);">※ YouTube 영상 ID를 연결하면 실제 썸네일이 표시되고, 클릭 시 영상으로 이동합니다.</p>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" style="position:relative; padding:clamp(80px,13vw,170px) clamp(20px,5vw,80px); border-top:1px solid rgba(255,255,255,.06); background:radial-gradient(circle at 50% 120%, #18181c 0%, #0a0a0c 60%);">
+    <div class="reveal" style="max-width:900px; margin:0 auto; text-align:center;">
+      <div style="font:500 11px/1 'Space Grotesk',sans-serif; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:22px;">Let's create together</div>
+      <h2 style="margin:0; font:700 clamp(32px,5.5vw,66px)/1.08 'Pretendard Variable',sans-serif; letter-spacing:-.025em; color:#fff;">만들고 싶은 콘텐츠가 있다면,<br>편하게 연락 주세요.</h2>
+      <p style="margin:24px auto 0; max-width:520px; font:400 15px/1.7 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.58);">기획 의도에 맞는 제작 방향부터 함께 제안합니다. 촬영 · 편집 · 모션그래픽까지 하나의 창구에서 진행해 드립니다.</p>
+      <a href="mailto:jodaeng95@gmail.com" class="contact-email" style="display:inline-flex; align-items:center; gap:12px; margin-top:40px; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:clamp(18px,3vw,28px); letter-spacing:-.01em; color:#0a0a0a; background:#fff; padding:18px 30px; border-radius:999px; text-decoration:none;">
+        <span style="display:inline-block; width:9px; height:9px; border-radius:50%; background:#0a0a0a;"></span>jodaeng95@gmail.com
+      </a>
+      <div style="margin-top:48px; display:flex; flex-wrap:wrap; gap:10px; justify-content:center; align-items:center; font:500 12px/1 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.5);">
+        <span style="display:inline-flex; align-items:center; gap:10px;"><span style="color:rgba(255,255,255,.82);">기획</span><span style="color:rgba(255,255,255,.25);">→</span></span>
+        <span style="display:inline-flex; align-items:center; gap:10px;"><span style="color:rgba(255,255,255,.82);">촬영</span><span style="color:rgba(255,255,255,.25);">→</span></span>
+        <span style="display:inline-flex; align-items:center; gap:10px;"><span style="color:rgba(255,255,255,.82);">편집</span><span style="color:rgba(255,255,255,.25);">→</span></span>
+        <span style="display:inline-flex; align-items:center; gap:10px;"><span style="color:rgba(255,255,255,.82);">피드백 · 수정</span><span style="color:rgba(255,255,255,.25);">→</span></span>
+        <span style="display:inline-flex; align-items:center; gap:10px;"><span style="color:rgba(255,255,255,.82);">최종 납품</span><span style="color:rgba(255,255,255,.25);"></span></span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding:34px clamp(20px,5vw,80px); border-top:1px solid rgba(255,255,255,.06); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;">
+    <span style="font:600 14px/1 'Pretendard Variable',sans-serif; color:#fff;">조대환 <span style="font:500 10px/1 'Space Grotesk',sans-serif; letter-spacing:.18em; color:rgba(255,255,255,.4); text-transform:uppercase; margin-left:6px;">Content Creator</span></span>
+    <span style="font:400 12px/1 'Space Grotesk',sans-serif; letter-spacing:.04em; color:rgba(255,255,255,.4);">© 2026 · jodaeng95@gmail.com</span>
+  </footer>
+
+</div>
+
+<script>
+  const WORKS = [
+    { id:1, title:'브랜드 다큐멘터리',          cat:'long',   catLabel:'롱폼',   meta:'62만 views', yt:'7aMb6hW4s-o' },
+    { id:2, title:'인터뷰 예능 〈만나봤어〉',    cat:'ent',    catLabel:'예능',   meta:'31만 views', yt:'MXX2XER7jZQ' },
+    { id:3, title:'제품 리뷰 쇼츠',             cat:'short',  catLabel:'쇼츠',   meta:'18만 views', yt:'xDvUqcgcWOk' },
+    { id:4, title:'라이프스타일 릴스',           cat:'short',  catLabel:'릴스',   meta:'24만 views', yt:'HvCJ2rGFLZU' },
+    { id:5, title:'온라인 클래스 인트로',        cat:'class',  catLabel:'강의',   meta:'Class',      yt:'ZNlKg6W2Tt0' },
+    { id:6, title:'모션그래픽 타이틀 시퀀스',   cat:'motion', catLabel:'모션',   meta:'Title',      yt:'iMMvwDgiw8k' },
+    { id:7, title:'정보성 콘텐츠 다큐',          cat:'info',   catLabel:'정보성', meta:'47만 views', yt:'WUuahlMKY3k' },
+    { id:8, title:'전문직 인터뷰',              cat:'info',   catLabel:'정보성', meta:'12만 views', yt:'haRljPSB1t8' }
+  ];
+
+  let currentFilter = 'all';
+
+  function renderGrid(filter) {
+    const grid = document.getElementById('work-grid');
+    const items = filter === 'all' ? WORKS : WORKS.filter(w => w.cat === filter);
+    grid.innerHTML = items.map(w => {
+      const hasYt = !!w.yt;
+      const thumb = hasYt ? `https://img.youtube.com/vi/${w.yt}/hqdefault.jpg` : '';
+      const title = hasYt ? w.title + ' — YouTube에서 보기' : w.title;
+      const click = hasYt ? `window.open('https://youtu.be/${w.yt}','_blank','noopener')` : '';
+      return `
+        <div class="work-card" onclick="${click}" title="${title}" style="cursor:${hasYt ? 'pointer' : 'default'}; display:flex; flex-direction:column; gap:13px;">
+          <div class="work-thumb" style="position:relative; aspect-ratio:16/9; border-radius:13px; overflow:hidden; border:1px solid rgba(255,255,255,.08); background:#141416; background-image:repeating-linear-gradient(135deg, rgba(255,255,255,.035) 0 11px, transparent 11px 24px); filter:grayscale(1); box-shadow:0 1px 0 rgba(255,255,255,.02);">
+            ${hasYt ? `<img src="${thumb}" alt="${w.title}" loading="lazy" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;">` : ''}
+            <div style="position:absolute; inset:0; background:radial-gradient(130% 130% at 50% 35%, rgba(255,255,255,.06), transparent 60%);"></div>
+            <div style="position:absolute; top:11px; left:11px; font:600 10px/1 'Space Grotesk',sans-serif; letter-spacing:.08em; text-transform:uppercase; color:#fff; background:rgba(10,10,12,.6); backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,.16); padding:5px 9px; border-radius:999px;">${w.catLabel}</div>
+            <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center;"><div style="width:48px; height:48px; border-radius:50%; background:rgba(255,255,255,.16); backdrop-filter:blur(6px); border:1px solid rgba(255,255,255,.28); display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-style:solid; border-width:7px 0 7px 12px; border-color:transparent transparent transparent #fff; margin-left:3px;"></div></div></div>
+          </div>
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px;">
+            <div style="font:600 15px/1.35 'Pretendard Variable',sans-serif; color:#fff; letter-spacing:-.01em;">${w.title}</div>
+            <div style="flex:none; font:500 12px/1 'Space Grotesk',sans-serif; letter-spacing:.02em; color:rgba(255,255,255,.45);">${w.meta}</div>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  function setFilter(btn, cat) {
+    currentFilter = cat;
+    document.querySelectorAll('.filter-chip').forEach(b => {
+      b.classList.toggle('active',   b.dataset.cat === cat);
+      b.classList.toggle('inactive', b.dataset.cat !== cat);
+    });
+    renderGrid(cat);
+  }
+
+  // scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.classList.add('visible');
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.14 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  renderGrid('all');
+</script>
+</body>
+</html>
