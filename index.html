@@ -279,7 +279,7 @@ body { background: #08080a; -webkit-font-smoothing: antialiased; text-rendering:
       <div class="reveal" style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:34px;">
         <div>
           <div style="font:500 11px/1 'Space Grotesk',sans-serif; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:14px;">Work</div>
-          <h2 style="margin:0; display:flex; align-items:center; gap:14px; font:700 clamp(28px,4vw,46px)/1 'Pretendard Variable',sans-serif; letter-spacing:-.02em; color:#fff;">오리지널 작업물 <span style="font:600 14px/1 'Space Grotesk',sans-serif; color:rgba(255,255,255,.55); border:1px solid rgba(255,255,255,.18); border-radius:999px; padding:6px 11px;">08</span></h2>
+          <h2 style="margin:0; display:flex; align-items:center; gap:14px; font:700 clamp(28px,4vw,46px)/1 'Pretendard Variable',sans-serif; letter-spacing:-.02em; color:#fff;">오리지널 작업물 <span style="font:600 14px/1 'Space Grotesk',sans-serif; color:rgba(255,255,255,.55); border:1px solid rgba(255,255,255,.18); border-radius:999px; padding:6px 11px;">13</span></h2>
         </div>
         <p style="margin:0; max-width:360px; font:400 13px/1.6 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.46);">롱폼 · 쇼츠 · 릴스 · 예능 · 정보성까지, 플랫폼과 형식에 맞춰 제작합니다.</p>
       </div>
@@ -297,7 +297,6 @@ body { background: #08080a; -webkit-font-smoothing: antialiased; text-rendering:
 
       <!-- work grid -->
       <div id="work-grid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(258px,1fr)); gap:22px;"></div>
-      <p style="margin:30px 0 0; font:400 12px/1.6 'Pretendard Variable',sans-serif; color:rgba(255,255,255,.32);">※ YouTube 영상 ID를 연결하면 실제 썸네일이 표시되고, 클릭 시 영상으로 이동합니다.</p>
     </div>
   </section>
 
@@ -329,14 +328,19 @@ body { background: #08080a; -webkit-font-smoothing: antialiased; text-rendering:
 
 <script>
   const WORKS = [
-    { id:1, title:'브랜드 다큐멘터리',          cat:'long',   catLabel:'롱폼',   meta:'62만 views', yt:'7aMb6hW4s-o' },
-    { id:2, title:'인터뷰 예능 〈만나봤어〉',    cat:'ent',    catLabel:'예능',   meta:'31만 views', yt:'MXX2XER7jZQ' },
-    { id:3, title:'제품 리뷰 쇼츠',             cat:'short',  catLabel:'쇼츠',   meta:'18만 views', yt:'xDvUqcgcWOk' },
-    { id:4, title:'라이프스타일 릴스',           cat:'short',  catLabel:'릴스',   meta:'24만 views', yt:'HvCJ2rGFLZU' },
-    { id:5, title:'온라인 클래스 인트로',        cat:'class',  catLabel:'강의',   meta:'Class',      yt:'ZNlKg6W2Tt0' },
-    { id:6, title:'모션그래픽 타이틀 시퀀스',   cat:'motion', catLabel:'모션',   meta:'Title',      yt:'iMMvwDgiw8k' },
-    { id:7, title:'정보성 콘텐츠 다큐',          cat:'info',   catLabel:'정보성', meta:'47만 views', yt:'WUuahlMKY3k' },
-    { id:8, title:'전문직 인터뷰',              cat:'info',   catLabel:'정보성', meta:'12만 views', yt:'haRljPSB1t8' }
+    { id:1,  title:'브랜드 다큐멘터리',          cat:'long',   catLabel:'롱폼',   meta:'62만 views', yt:'7aMb6hW4s-o' },
+    { id:2,  title:'인터뷰 예능 〈만나봤어〉',    cat:'ent',    catLabel:'예능',   meta:'31만 views', yt:'MXX2XER7jZQ' },
+    { id:3,  title:'제품 리뷰 쇼츠',             cat:'short',  catLabel:'쇼츠',   meta:'18만 views', yt:'xDvUqcgcWOk' },
+    { id:4,  title:'라이프스타일 릴스',           cat:'short',  catLabel:'릴스',   meta:'24만 views', yt:'HvCJ2rGFLZU' },
+    { id:5,  title:'온라인 클래스 인트로',        cat:'class',  catLabel:'강의',   meta:'Class',      yt:'ZNlKg6W2Tt0' },
+    { id:6,  title:'모션그래픽 타이틀 시퀀스',   cat:'motion', catLabel:'모션',   meta:'Title',      yt:'iMMvwDgiw8k' },
+    { id:7,  title:'정보성 콘텐츠 다큐',          cat:'info',   catLabel:'정보성', meta:'47만 views', yt:'WUuahlMKY3k' },
+    { id:8,  title:'전문직 인터뷰',              cat:'info',   catLabel:'정보성', meta:'12만 views', yt:'haRljPSB1t8' },
+    { id:9,  title:'3일간 아이돌을 덕질하면 생기는 일',                        cat:'ent',   catLabel:'예능',   meta:'롱폼 · 브이로그', yt:'9EK7bRbhREs' },
+    { id:10, title:'강한자만 살아남는 놀이터는 어떤 곳이였을까? 추억의 놀이터', cat:'ent',   catLabel:'예능',   meta:'롱폼 · 브이로그', yt:'F1kioNtlObI' },
+    { id:11, title:'IOS27 5분안에 설정하는 꿀 기능',                          cat:'info',  catLabel:'정보성', meta:'롱폼',           yt:'stq0rXV39jM' },
+    { id:12, title:'99%가 모르는 아이폰 꿀팁',                                cat:'short', catLabel:'쇼츠',   meta:'정보성',         yt:'sScKxjGXO40' },
+    { id:13, title:'스크린샷을 그냥 쓰지 마세요!',                            cat:'short', catLabel:'쇼츠',   meta:'정보성',         yt:'ABeKCJIr-iQ' }
   ];
 
   let currentFilter = 'all';
